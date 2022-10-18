@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags%}
+{% block content %}
+   
+    
+    
+        {% image self.banner_image fill-900x400 as img %}
+        <img src=" {{ img.url }}" alt="">
+        <div class="card-body">
+          <h5 class="card-title">{{ self.banner_title }}</h5>
+          <div class="lead"> {{ self.banner_subtitle|richtext }}</div>
+          {% if self.batter_cta %}
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          {% endif %}
+        </div>
+{% endblock %}
